@@ -81,7 +81,7 @@ namespace Delegate_Part2ConsoleApp.Models
             }
             foreach (var item in Books)
             {
-                if (id==item.Id)
+                if (id==item.Id && item.IsDelete==false)
                 {
                     Console.WriteLine(item.Id);
                     return item;
@@ -90,9 +90,28 @@ namespace Delegate_Part2ConsoleApp.Models
             return null;
             
         }
-        public void DeleteBookById()
+
+        public void GetAllBooks()
         {
-           
+            
+        }
+
+        public bool DeleteBookById(int? id)
+        {
+            if (id == null)
+            {
+                NullReferenceException ex = null;
+                Console.WriteLine(ex.Message);
+            }
+            foreach (var item in Books)
+            {
+                if (id == item.Id && item.IsDelete)
+                {
+                    item.IsDelete = true;
+                    return item.IsDelete;
+                }
+            }
+            return false;
         }
         #endregion
 
