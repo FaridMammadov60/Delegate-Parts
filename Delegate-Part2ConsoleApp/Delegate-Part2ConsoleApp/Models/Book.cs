@@ -13,7 +13,7 @@ namespace Delegate_Part2ConsoleApp.Models
         string _authorName;
         int _pageCount;
         bool _isDelete;
-        int _id;
+        static int _id;
         #endregion
 
         #region Properties

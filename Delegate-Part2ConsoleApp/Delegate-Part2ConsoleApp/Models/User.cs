@@ -14,7 +14,7 @@ namespace Delegate_Part2ConsoleApp
         string _userName;
         string _email;
         Role _role;
-        int _id;
+        static int _id;
         #endregion
         
         #region Properties

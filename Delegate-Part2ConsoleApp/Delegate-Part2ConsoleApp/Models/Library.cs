@@ -12,7 +12,7 @@ namespace Delegate_Part2ConsoleApp.Models
         #region Fields
         int _bookLimit;
         List<Book> _books;
-        int _id;
+        static int _id;
         #endregion
 
         #region Properties
@@ -83,7 +83,7 @@ namespace Delegate_Part2ConsoleApp.Models
             {
                 if (id==item.Id && item.IsDelete==false)
                 {
-                    Console.WriteLine(item.Id);
+                    item.ShowInfo();
                     return item;
                 }
             }
@@ -93,7 +93,14 @@ namespace Delegate_Part2ConsoleApp.Models
 
         public void GetAllBooks()
         {
-            
+            foreach (var item in Books)
+            {
+                if (item.IsDelete==false)
+                {
+                    item.ShowInfo();
+                    Console.WriteLine("--------------");
+                }                
+            }
         }
 
         public bool DeleteBookById(int? id)
@@ -105,9 +112,10 @@ namespace Delegate_Part2ConsoleApp.Models
             }
             foreach (var item in Books)
             {
-                if (id == item.Id && item.IsDelete)
+                if (id == item.Id && item.IsDelete==false)
                 {
                     item.IsDelete = true;
+                    Console.WriteLine("Seçilmiş kitab silindi");
                     return item.IsDelete;
                 }
             }
