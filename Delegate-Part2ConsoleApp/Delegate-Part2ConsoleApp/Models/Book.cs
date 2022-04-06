@@ -12,6 +12,7 @@ namespace Delegate_Part2ConsoleApp.Models
         string _name;
         string _authorName;
         int _pageCount;
+        bool _isDelete;
         int _id;
         #endregion
 
@@ -51,6 +52,18 @@ namespace Delegate_Part2ConsoleApp.Models
         }
         public int Id { get; }
 
+        public bool IsDelete 
+        { 
+            get
+            {
+                return _isDelete;
+            }
+            set
+            {
+               _isDelete=value;
+            }
+        }
+
         #endregion
 
         #region Constructor
@@ -64,13 +77,7 @@ namespace Delegate_Part2ConsoleApp.Models
         }
         #endregion
 
-        #region Method
-        public bool IsDeleted()
-        {
-            bool result = false;
-            return result;
-              
-        }
+        #region Method      
         public void ShowInfo()
         {
             Console.WriteLine($"Book name: {Name}\n" +

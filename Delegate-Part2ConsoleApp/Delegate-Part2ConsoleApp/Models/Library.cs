@@ -55,7 +55,7 @@ namespace Delegate_Part2ConsoleApp.Models
         {
             foreach (var item in Books)
             {
-                if (book.IsDeleted()==false && book.Name==item.Name)
+                if (book.IsDelete==false && book.Name==item.Name)
                 {
                     AlreadyExistsException.Allready();
                     return;
@@ -72,7 +72,28 @@ namespace Delegate_Part2ConsoleApp.Models
            
         }
 
-
+        public Book GetBookById(int? id)
+        {
+            if (id==null)
+            {
+                NullReferenceException ex = null;
+                Console.WriteLine(ex.Message);
+            }
+            foreach (var item in Books)
+            {
+                if (id==item.Id)
+                {
+                    Console.WriteLine(item.Id);
+                    return item;
+                }
+            }
+            return null;
+            
+        }
+        public void DeleteBookById()
+        {
+           
+        }
         #endregion
 
     }
