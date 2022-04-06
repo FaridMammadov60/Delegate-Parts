@@ -1,0 +1,12 @@
+C:\Users\farid\Desktop\New folder (3)\Delegate-Parts\Delegate-Part2ConsoleApp\UtilsLibrary\bin\Debug\net5.0\UtilsLibrary.deps.json
+C:\Users\farid\Desktop\New folder (3)\Delegate-Parts\Delegate-Part2ConsoleApp\UtilsLibrary\bin\Debug\net5.0\UtilsLibrary.dll
+C:\Users\farid\Desktop\New folder (3)\Delegate-Parts\Delegate-Part2ConsoleApp\UtilsLibrary\bin\Debug\net5.0\UtilsLibrary.pdb
+C:\Users\farid\Desktop\New folder (3)\Delegate-Parts\Delegate-Part2ConsoleApp\UtilsLibrary\obj\Debug\net5.0\UtilsLibrary.csproj.AssemblyReference.cache
+C:\Users\farid\Desktop\New folder (3)\Delegate-Parts\Delegate-Part2ConsoleApp\UtilsLibrary\obj\Debug\net5.0\UtilsLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\farid\Desktop\New folder (3)\Delegate-Parts\Delegate-Part2ConsoleApp\UtilsLibrary\obj\Debug\net5.0\UtilsLibrary.AssemblyInfoInputs.cache
+C:\Users\farid\Desktop\New folder (3)\Delegate-Parts\Delegate-Part2ConsoleApp\UtilsLibrary\obj\Debug\net5.0\UtilsLibrary.AssemblyInfo.cs
+C:\Users\farid\Desktop\New folder (3)\Delegate-Parts\Delegate-Part2ConsoleApp\UtilsLibrary\obj\Debug\net5.0\UtilsLibrary.csproj.CoreCompileInputs.cache
+C:\Users\farid\Desktop\New folder (3)\Delegate-Parts\Delegate-Part2ConsoleApp\UtilsLibrary\obj\Debug\net5.0\UtilsLibrary.dll
+C:\Users\farid\Desktop\New folder (3)\Delegate-Parts\Delegate-Part2ConsoleApp\UtilsLibrary\obj\Debug\net5.0\refint\UtilsLibrary.dll
+C:\Users\farid\Desktop\New folder (3)\Delegate-Parts\Delegate-Part2ConsoleApp\UtilsLibrary\obj\Debug\net5.0\UtilsLibrary.pdb
+C:\Users\farid\Desktop\New folder (3)\Delegate-Parts\Delegate-Part2ConsoleApp\UtilsLibrary\obj\Debug\net5.0\ref\UtilsLibrary.dll

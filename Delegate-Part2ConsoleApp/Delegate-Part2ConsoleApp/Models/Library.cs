@@ -113,6 +113,36 @@ namespace Delegate_Part2ConsoleApp.Models
             }
             return false;
         }
+
+        public void EditBookName(int? id)
+        {
+            if (id == null)
+            {
+                NullReferenceException ex = null;
+                Console.WriteLine(ex.Message);
+            }
+            foreach (var item in Books)
+            {
+                if (id==item.Id)
+                {
+                    Console.Write("Kitabın yeni adın qeyd edin: ");
+                    item.Name=Console.ReadLine();
+                    return;
+                }
+            }
+            NotFoundException.NotFound();
+        }
+
+        public void FiltrByPageCount(int minPageCount, int maxPageCount)
+        {
+            foreach (var item in Books)
+            {
+                if (item.PageCount>minPageCount&& item.PageCount<maxPageCount&&item.IsDelete==false)
+                {
+                    item.ShowInfo();
+                }
+            }
+        }
         #endregion
 
     }

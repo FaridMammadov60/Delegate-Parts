@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Delegate_Part2ConsoleApp.Enums;
+using System;
+using System.Text;
 
 namespace Delegate_Part2ConsoleApp
 {
@@ -6,7 +8,18 @@ namespace Delegate_Part2ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.OutputEncoding=Encoding.Unicode;
+            Console.InputEncoding=Encoding.Unicode;
+            
+            Console.Write("Username daxil edin: ");
+            string userName=Console.ReadLine();
+            Console.Write("Email daxil edin: ");
+            string email =Console.ReadLine();
+            Role role = new Role();
+           
+            User user = new User("Farid", "Faridmammadov60@gmail.com", role);
+            user.ShowInfo();
+            
         }
     }
 }
