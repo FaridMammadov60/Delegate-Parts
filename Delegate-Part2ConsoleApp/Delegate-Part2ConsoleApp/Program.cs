@@ -34,29 +34,40 @@ namespace Delegate_Part2ConsoleApp
             User user = new User(userName, email, role);
             user.ShowInfo();
             #endregion
+            #region Create Library
             List<Book> books = new List<Book>();
             Library library = new Library()
             {
                 Books = books,
                 BookLimit = 11
             };
+        #endregion
+
+            #region Menyu
         M1: Console.WriteLine("1. Add book\n" +
-             "2. Get book by id\n" +
-             "3. Get all books\n" +
-             "4. Delete book by id\n" +
-             "5. Edit book name\n" +
-             "6. Filtr by page count\n" +
-             "0. Quit");
+            "2. Get book by id\n" +
+            "3. Get all books\n" +
+            "4. Delete book by id\n" +
+            "5. Edit book name\n" +
+            "6. Filtr by page count\n" +
+            "0. Quit");
             Console.Write("Enter menyu number: ");
-            
+
             int men = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("------------------------");
+            #endregion
+
             switch (men)
             {
                 case 0:
                     break;
                 case 1:
                     #region AddBook
+                    if (role==Role.Member)
+                    {
+                        Console.WriteLine("Sizin kitab əlavə etmək icazəniz yoxdur");
+                        goto M1;
+                    }
                     Console.Write("Kitabın adın daxil edin: ");
                     string nameBook = Console.ReadLine();
                     Console.Write("Kitabın müəllifin daxil edin: ");
@@ -82,6 +93,11 @@ namespace Delegate_Part2ConsoleApp
                     goto M1;
                 case 4:
                     #region DeleteById
+                    if (role == Role.Member)
+                    {
+                        Console.WriteLine("Sizin kitab silmək icazəniz yoxdur");
+                        goto M1;
+                    }
                     Console.Write("Silmək istenilen ID-ni daxil edin: ");
                     int id2 = Convert.ToInt32(Console.ReadLine());
                     library.DeleteBookById(id2);
@@ -90,6 +106,11 @@ namespace Delegate_Part2ConsoleApp
                     goto M1;
                 case 5:
                     #region EditBookName
+                    if (role == Role.Member)
+                    {
+                        Console.WriteLine("Sizin kitab edit icazəniz yoxdur");
+                        goto M1;
+                    }
                     Console.Write("Adı deyişiləcək kitabın ID-sin daxil edin: ");
                     int id3 = Convert.ToInt32(Console.ReadLine());
                     library.EditBookName(id3);
