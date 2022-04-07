@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Delegate_Part2ConsoleApp
@@ -16,7 +17,9 @@ namespace Delegate_Part2ConsoleApp
         Role _role;
         static int _id;
         #endregion
-        
+
+        public const string Email_Pattern = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
+
         #region Properties
         public string UserName
         {
@@ -37,7 +40,23 @@ namespace Delegate_Part2ConsoleApp
             }
             set
             {
-                _email = value;
+
+                if (isEmail(value))
+                {
+                    _email = value;
+                }
+                else
+                {
+                E1: Console.Write("Email düzgün daxil edilməmişdir bir daha cəhd edin: ");
+                    string em=Console.ReadLine();
+                    if (isEmail(em))
+                    {
+                        _email = em;
+                        return;
+                    }
+                    goto E1;
+                }
+                
             }
         }
         public Role Role
@@ -75,7 +94,15 @@ namespace Delegate_Part2ConsoleApp
                 $"User role: {Role}\n" +
                 $"User ID: {Id}");
         }
-
+        public bool isEmail( string email)
+        {
+            Match emailResult = Regex.Match(email, Email_Pattern);
+            if (emailResult.Success)
+            {
+                return true;
+            }                
+            return false;
+        }
         #endregion
 
 

@@ -69,7 +69,8 @@ namespace Delegate_Part2ConsoleApp.Models
             }
             Books.Add(book);
             Console.WriteLine("Kitab uğurla Kitabxanaya əlavə edildi");
-           
+            Console.WriteLine("-----------------------------");
+
         }
 
         public Book GetBookById(int? id)
@@ -84,6 +85,7 @@ namespace Delegate_Part2ConsoleApp.Models
                 if (id==item.Id && item.IsDelete==false)
                 {
                     item.ShowInfo();
+                    Console.WriteLine("---------------------");
                     return item;
                 }
             }
@@ -93,7 +95,9 @@ namespace Delegate_Part2ConsoleApp.Models
 
         public void GetAllBooks()
         {
-            foreach (var item in Books)
+            List<Book>booksnew=new List<Book>();
+           booksnew.AddRange(Books);
+            foreach (var item in booksnew)
             {
                 if (item.IsDelete==false)
                 {
@@ -116,6 +120,7 @@ namespace Delegate_Part2ConsoleApp.Models
                 {
                     item.IsDelete = true;
                     Console.WriteLine("Seçilmiş kitab silindi");
+                    Console.WriteLine("-------------------------");
                     return item.IsDelete;
                 }
             }
@@ -135,6 +140,7 @@ namespace Delegate_Part2ConsoleApp.Models
                 {
                     Console.Write("Kitabın yeni adın qeyd edin: ");
                     item.Name=Console.ReadLine();
+                    Console.WriteLine("-------------------------");
                     return;
                 }
             }
@@ -148,8 +154,11 @@ namespace Delegate_Part2ConsoleApp.Models
                 if (item.PageCount>minPageCount&& item.PageCount<maxPageCount&&item.IsDelete==false)
                 {
                     item.ShowInfo();
+                    Console.WriteLine("---------------------------");
+                    return;
                 }
             }
+            Console.WriteLine("Qeyd edilmiş sehifə aralığında kitab yoxdur");
         }
         #endregion
 
